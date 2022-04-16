@@ -1,0 +1,15 @@
+.album-cont {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.album-image {
+    width: 5em;
+    border-radius: 50%;
+}
+
+.album-info {
+    list-style-type: none;
+    line-height: 1.5em;
+}

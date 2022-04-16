@@ -1,0 +1,26 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    height: 3em;
+    color: white;
+    background-color: black;
+}
+
+.nav-bar-logo-cont {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-bar-logo {
+    height: 2.5em;
+}
+
+@media (max-width : 620px)  {
+    .nav-bar-logo {
+        height: 1.8em;
+    }
+}

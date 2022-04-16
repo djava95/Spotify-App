@@ -1,0 +1,35 @@
+@import '../../index.scss';
+
+.srch-field-container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-field {
+    width: 18em;
+    height: 2em;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 14px;
+    outline: none;
+    text-indent: 2.3em;
+    font-family: $mainFontFamily ;
+    background-image: url('../../assets/magnifier-icon.svg');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 10px 6px ;
+    &::-webkit-search-cancel-button {
+        display: none;
+    }
+
+}
+
+@media (max-width : 620px)  {
+    .search-field {
+        width: 13em;
+    }
+    
+}

@@ -1,0 +1,48 @@
+.artist-info-main-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.artist-info {
+  display: flex;
+  align-items: center;
+  padding: 3em;
+  margin-top: 3em;
+  color: white;
+  background-color: rgb(40, 40, 40);
+}
+
+.artist-image {
+  width: 15em;
+  height: 15em;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 700ms;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.info-list {
+  list-style-type: none;
+  line-height: 2em;
+}
+
+.info-list li:nth-child(1) {
+  font-size: 24px;
+}
+
+.no-matches-message {
+  margin-top: 3em;
+  text-align: center;
+  color: white;
+}
+
+.modal-cont {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(31, 31, 31, 0.7);
+  padding: 1em;
+}
+
