@@ -1,9 +1,8 @@
 import { ARTIST_SEARCH, LOAD_ARTIST_ALBUMS, SUBMIT_ARTIST_SEARCH } from "../actions/action-types";
 
-
 const defaultState = {
     artistData: {},
-    submittedArtistdata : null,
+    submittedArtistData : null,
     albums: [],
 }
 
@@ -17,7 +16,7 @@ export default function Reducer(state = defaultState, action) {
         case SUBMIT_ARTIST_SEARCH :
             return {
                 ...state,
-                submittedArtistdata : state.artistData,
+                submittedArtistData : state.artistData,
             }    
         case LOAD_ARTIST_ALBUMS : 
             return {

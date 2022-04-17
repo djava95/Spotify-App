@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from '@mui/material/Modal';
 import useCurrentToken from '../../services/auth/token-extract';
@@ -11,16 +11,11 @@ const ArtistInfo = () => {
 
     const dispatch = useDispatch();
     let token = useCurrentToken();
-    let [artistData, setArtistData] = useState();
     const [open, setOpen] = useState(false);
-    let updArtistdata = useSelector(state => state.submittedArtistdata);
-
-    useEffect(() => {
-        setArtistData(updArtistdata);
-    }, [updArtistdata]);
+    let updArtistData = useSelector(state => state.submittedArtistData);
 
     const handleClick = () => {
-        dispatch(LoadArtistAlbums(updArtistdata.id,token));
+        dispatch(LoadArtistAlbums(updArtistData.id,token));
         setOpen(true);
     };
 
@@ -28,24 +23,24 @@ const ArtistInfo = () => {
         setOpen(false);
     }
 
-    if (artistData) {
+    if (updArtistData) {
         return (
             <div className="artist-info-main-cont">
                 <section className="artist-info">
-                    <img onClick={handleClick} src={artistData.images.length ? artistData.images[1].url : ''} className='artist-image' alt="artist" />
+                    <img onClick={handleClick} src={updArtistData.images.length ? updArtistData.images[1].url : ''} className='artist-image' alt="artist" />
                     <ul className="info-list">
-                        <li className="artist-name">{artistData.name ? artistData.name : ''}</li>
-                        <li className="artist-popularity"> Rating: {artistData.popularity ? <StarRating rate={artistData.popularity} /> : ''}</li>
-                        <li className="artist-followers-num"> Followers: {artistData.followers ? artistData.followers.total.toLocaleString('en-US') : ''}</li>
+                        <li className="artist-name">{updArtistData.name ? updArtistData.name : ''}</li>
+                        <li className="artist-popularity"> Rating: {updArtistData.popularity ? <StarRating rate={updArtistData.popularity} /> : ''}</li>
+                        <li className="artist-followers-num"> Followers: {updArtistData.followers ? updArtistData.followers.total.toLocaleString('en-US') : ''}</li>
                     </ul>
                     <Modal className='modal-cont' open={open} onClose={handleClose}>
-                        <ViewArtistAlbums />
+                        <ViewArtistAlbums handleClick={handleClose}/>
                     </Modal>
                 </section>
             </div>
         )
     }
-    else if (artistData === undefined) {
+    else if (updArtistData === undefined) {
         return (
             <p className="no-matches-message"> No Matches :( </p>
         )

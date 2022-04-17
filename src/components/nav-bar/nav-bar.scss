@@ -1,26 +1,38 @@
 .nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1em;
-    height: 3em;
-    color: white;
-    background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  color: white;
+  background-color: black;
 }
 
 .nav-bar-logo-cont {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 480px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .nav-bar-logo-cont {
+    width: 100%;
+    flex: none;
+    justify-content: center;
+  }
 }
 
 .nav-bar-logo {
-    height: 2.5em;
+  height: 2.5em;
 }
 
-@media (max-width : 620px)  {
-    .nav-bar-logo {
-        height: 1.8em;
-    }
+@media (max-width: 620px) {
+  .nav-bar-logo {
+    height: 1.8em;
+  }
 }

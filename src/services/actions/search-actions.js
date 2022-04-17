@@ -12,7 +12,7 @@ export const SearchPerName = (inputValue, token) => async (dispatch) => {
     });
 
     let respData = await resp.data.artists.items;
-    let artistData = await respData.find(item => item.name === inputValue);
+    let artistData = await respData[0];
 
     dispatch({
         type: ARTIST_SEARCH,
@@ -35,8 +35,6 @@ export const LoadArtistAlbums = (artistId,token) => async (dispatch) => {
     });
 
     let albums = await resp.data.items;
-
-    console.log(albums);
     
     dispatch({
         type: LOAD_ARTIST_ALBUMS,
