@@ -5,7 +5,6 @@ import './login-page.scss';
 
 export default function LoginPage() {
     
-
     return (
         <div className='main-container'>
             <div className='button-container'>
