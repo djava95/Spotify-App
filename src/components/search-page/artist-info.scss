@@ -1,13 +1,16 @@
 .artist-info-main-cont {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
 }
 
 .artist-info {
   display: flex;
   align-items: center;
-  padding: 3em;
-  margin-top: 3em;
+  padding: 1em;
+  width: 30em;
   color: white;
   background-color: rgb(40, 40, 40);
 }
@@ -38,7 +41,6 @@
   }
 
 }
-
 
 @media (max-width : 500px ){
   .artist-image {

@@ -9,5 +9,8 @@ url += '&client_id=' + encodeURIComponent(client_id);
 url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
 
 export function handleLogin () {
-    window.location = url;
+    window.location = url; 
 };
+
+
+

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ARTIST_SEARCH, SUBMIT_ARTIST_SEARCH, LOAD_ARTIST_ALBUMS } from './action-types';
+import { ARTIST_SEARCH, LOAD_ARTIST_ALBUMS } from './action-types';
 
 
 
@@ -11,20 +11,14 @@ export const SearchPerName = (inputValue, token) => async (dispatch) => {
         }
     });
 
-    let respData = await resp.data.artists.items;
-    let artistData = await respData[0];
-
+    let artists = await resp.data.artists.items;
+    
     dispatch({
         type: ARTIST_SEARCH,
-        payload: artistData
+        payload: artists
     })
 }
 
-export const SubmitArtistSearch = () => (dispatch) => {
-    dispatch({
-        type: SUBMIT_ARTIST_SEARCH,
-    })
-}
 
 export const LoadArtistAlbums = (artistId,token) => async (dispatch) => {
 

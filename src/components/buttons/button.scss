@@ -1,20 +1,12 @@
 @import '../../index.scss';
 
-.landing-page-link-cont {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.landing-page-link {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 7em;
-  height: 2em;
+  width: 12em;
+  height: 3em;
   color: black;
-  text-decoration: none;
   font-size: 16px;
   font-family: $mainFontFamily;
   font-weight: 600;
@@ -38,14 +30,3 @@
   }
 }
 
-@media (max-width: 700px) {
-  .landing-page-link {
-    margin-right: 0em;
-  }
-}
-
-@media (max-width: 480px) {
-  .landing-page-link-cont {
-    justify-content: center;
-  }
-}

@@ -1,4 +1,5 @@
-.nav-bar {
+.header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,32 +8,35 @@
   background-color: black;
 }
 
-.nav-bar-logo-cont {
-  flex: 1;
+.header-logo-cont {
+  position: absolute;
+  left: 1em;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
 }
 
 @media (max-width: 480px) {
-  .nav-bar {
+  .header {
     flex-wrap: wrap;
     gap: 1em;
   }
 
-  .nav-bar-logo-cont {
+  .header-logo-cont {
+    position: static;
     width: 100%;
     flex: none;
     justify-content: center;
   }
 }
 
-.nav-bar-logo {
+.header-logo {
   height: 2.5em;
 }
 
 @media (max-width: 620px) {
-  .nav-bar-logo {
+  .header-logo {
     height: 1.8em;
   }
 }

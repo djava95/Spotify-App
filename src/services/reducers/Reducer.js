@@ -1,23 +1,21 @@
-import { ARTIST_SEARCH, LOAD_ARTIST_ALBUMS, SUBMIT_ARTIST_SEARCH } from "../actions/action-types";
+import { ARTIST_SEARCH, LOAD_ARTIST_ALBUMS} from "../actions/action-types";
 
 const defaultState = {
-    artistData: {},
+    noInputAfterLoad : true,
+    artists: [],
     submittedArtistData : null,
     albums: [],
 }
 
 export default function Reducer(state = defaultState, action) {
     switch (action.type) {
+
         case ARTIST_SEARCH :
             return {
                 ...state,
-                artistData: action.payload,
-            }
-        case SUBMIT_ARTIST_SEARCH :
-            return {
-                ...state,
-                submittedArtistData : state.artistData,
-            }    
+                artists: action.payload,
+                noInputAfterLoad : false,
+            }                
         case LOAD_ARTIST_ALBUMS : 
             return {
                 ...state,
