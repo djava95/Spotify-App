@@ -23,7 +23,6 @@ const ArtistItem = ({artist}) => {
     }
 
     return (
-
         <section key={artist.id} className="artist-info">
             <img onClick={handleClick} src={artist.images.length ? artist.images[1].url : ''} className='artist-image' alt="artist" />
             <ul className="info-list">
