@@ -1,0 +1,15 @@
+.star-rating-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ gap: 0.25em;
+
+  .star-icon {
+    height: 1em;
+    
+    &.white {
+      filter: invert(1);
+    }
+  }
+
+}

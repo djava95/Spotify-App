@@ -1,15 +1,21 @@
-.album-cont {
-    display: flex;
-    align-items: center;
-    color: white;
-}
-
-.album-image {
+.album-container {
+  display: flex;
+  align-items: center;
+  color: white;
+    
+  .album-image {
     width: 5em;
     border-radius: 50%;
+  }
+
+  .album-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5em;
+    row-gap: 0.25em;
+  }
+
 }
 
-.album-info {
-    list-style-type: none;
-    line-height: 1.5em;
-}
+
+

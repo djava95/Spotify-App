@@ -1,12 +1,16 @@
 @import '../../index.scss';
+@import '../../styles/mixins.scss';
 
-.srch-field-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.search-field-container{
+  flex: 1;
+  @include baseFlexStyle;
+  justify-content: center;
+  
+  @media (max-width : 372px) {
+    order: 1;
+  }
 
-.search-field {
+  .search-field {
     width: 18em;
     height: 2em;
     font-size: 16px;
@@ -21,20 +25,18 @@
     background-size: 18px;
     background-position: 10px 6px ;
     &::-webkit-search-cancel-button {
-        display: none;
+      display: none;
     }
 
+    @media (max-width : 620px)  {
+      width: 13em;
+    }
+  }
 }
 
-@media (max-width : 620px)  {
-    .search-field {
-        width: 13em;
-    }
+
+
+
     
-}
 
-@media (max-width : 372px) {
-    .srch-field-container {
-        order: 1;
-    }
-}
+

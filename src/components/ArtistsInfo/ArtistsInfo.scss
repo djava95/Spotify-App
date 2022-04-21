@@ -1,0 +1,15 @@
+.artist-info-main-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.no-matches-message {
+  margin-top: 3em;
+  text-align: center;
+  color: white;
+}
+
+

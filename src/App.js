@@ -1,17 +1,31 @@
 import { React } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from './components/login-page/login-page.js';
-import SearchPage from './components/search-page/search-page.js';
+import axios from 'axios';
+import Header from './components/Header/Header.js';
+import LoginPage from './components/LoginPage/LoginPage.js';
+import SearchPage from './components/SearchPage/SearchPage.js';
 import './App.scss';
 
-export default function App() {
+axios.interceptors.response.use( 
+  response => {
+    return response
+  }, 
+  error => {
+    if (error.response.status === 401) {
+      localStorage.setItem('token', '');
+      window.location = 'http://localhost:3000';
+    } 
+  }
+)
 
+export default function App() {
   return (
-    <div className="main-container">
+    <div className="app-main-container">
       <BrowserRouter>
+        <Header />
         <Routes>
-          <Route path='/' element={<LoginPage />}></Route>
-          <Route path='/search-page' element={<SearchPage />}> </Route>
+          <Route path='/' element={ <LoginPage /> } />
+          <Route path='/search-page' element={ <SearchPage /> } /> 
         </Routes>
       </BrowserRouter>
     </div>

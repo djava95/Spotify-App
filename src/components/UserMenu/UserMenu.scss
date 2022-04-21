@@ -1,0 +1,59 @@
+@import '../../styles/mixins.scss';
+
+.user-menu-container {
+  position: relative;
+  flex: 1;
+  @include baseFlexStyle;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .user-info-container {
+    @include baseFlexStyle;
+    justify-content: flex-start;
+    gap: 0.5em;
+    padding: 0.25em; 
+    background-color: rgb(75, 75, 75);
+    border-radius: 18px;
+    font-weight: 500;
+    cursor: pointer;
+
+    .user-image-container {
+      @include baseFlexStyle;
+      justify-content: center;
+      padding: 0.4em;
+      border-radius: 50%;
+      background-color: black;
+
+      .user-image {
+        width: 1em;
+        height: 1em;
+        border: none;
+        filter: invert(1);
+      }  
+    }  
+  }
+
+  .menu-container{
+    position : absolute;
+    top: 2.75em;
+    @include baseFlexStyle;
+    flex-direction: column;
+    justify-content: center;
+    width: 10em;
+    padding: 2em 0.2em;
+    background-color: rgb(75, 75, 75);
+    border-radius: 8px;
+  
+    .log-out {
+      cursor: pointer;
+      width: 100%;
+      padding: 0.25em 0em;
+      text-align: center;
+      border-radius: 3px;
+        
+      &:hover {
+        background-color: grey;
+      }
+    }  
+  }    
+}

@@ -1,42 +1,41 @@
-.header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@import '../../styles/mixins.scss';
+
+.header-main-container {
+  @include baseFlexStyle;
+  justify-content: flex-start;
   padding: 1em;
   color: white;
   background-color: black;
-}
 
-.header-logo-cont {
-  position: absolute;
-  left: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-}
-
-@media (max-width: 480px) {
-  .header {
+  @media (max-width: 480px) {
     flex-wrap: wrap;
     gap: 1em;
   }
 
   .header-logo-cont {
-    position: static;
-    width: 100%;
-    flex: none;
-    justify-content: center;
-  }
+    flex: 1;
+    @include baseFlexStyle;
+    justify-content: flex-start;
+  
+    @media (max-width: 480px) {
+      width: 100%;
+      flex: none;
+      justify-content: center;
+    }
+  
+    .header-logo {
+      height: 2.5em;
+    
+      @media (max-width: 620px) {
+        height: 1.8em; 
+      }
+    }
+  }  
 }
 
-.header-logo {
-  height: 2.5em;
-}
 
-@media (max-width: 620px) {
-  .header-logo {
-    height: 1.8em;
-  }
-}
+
+
+
+
+
