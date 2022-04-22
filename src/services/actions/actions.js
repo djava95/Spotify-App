@@ -8,6 +8,7 @@ export const SearchByName = (inputValue) => async (dispatch) => {
     }
   });
   const artists = await res.data.artists.items;
+  console.log(artists);
   dispatch({
     type: ARTIST_SEARCH,
     payload: artists
