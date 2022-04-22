@@ -27,7 +27,9 @@ const ArtistItem = ({artist}) => {
           </div>
           <div className="info-list">
             <div className="artist-name">{artist.name ? artist.name : ''}</div>
-              <div className="artist-popularity"> Rating: {artist.popularity ? <StarRating rate={artist.popularity} /> : ''}</div>
+              <div className="artist-popularity" title={ `${(artist.popularity/20).toFixed(1)} out of 5 stars` }>
+                 Rating: {artist.popularity ? <StarRating rate={artist.popularity} /> : ''}
+              </div>
               <div className="artist-followers-num"> Followers: {artist.followers ? artist.followers.total.toLocaleString('en-US') : ''}</div>
           </div>            
       </section>
