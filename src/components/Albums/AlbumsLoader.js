@@ -1,11 +1,9 @@
 import { React } from 'react';
 import { useSelector } from "react-redux";
 import Album from './Album';
-
 import './AlbumsLoader.scss';
 
 export function AlbumsLoader () {
-
   let albums = useSelector(state => state.albums);
 
   return (
