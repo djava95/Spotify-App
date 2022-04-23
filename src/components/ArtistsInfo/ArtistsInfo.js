@@ -3,11 +3,9 @@ import { useSelector } from "react-redux";
 import ArtistItem from "../ArtistItem/ArtistItem";
 import './ArtistsInfo.scss';
 
-const ArtistsInfo = () => {
-    
+const ArtistsInfo = () => {  
   let artists = useSelector(state => state.artists);
   
-
   if (artists === null) {
     return 
   }
@@ -16,13 +14,11 @@ const ArtistsInfo = () => {
       <p className="no-matches-message"> No Matches :( </p>
     )
   }
-  if (artists) {
-    return (
-      <div className="artist-info-main-cont">
-        {artists.map(artist => <ArtistItem key={artist.id} artist={artist}/>)}                
-      </div>
-    )
-  }
+  return (
+    <div className="artist-info-main-cont">
+      {artists.map(artist => <ArtistItem key={artist.id} artist={artist}/>)}                
+    </div>
+    )  
 }
 
 export default ArtistsInfo;
