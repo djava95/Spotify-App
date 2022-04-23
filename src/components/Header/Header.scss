@@ -1,0 +1,41 @@
+@import '../../styles/mixins.scss';
+
+.header-main-container {
+  @include baseFlexStyle;
+  justify-content: flex-start;
+  padding: 1em;
+  color: white;
+  background-color: black;
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .header-logo-cont {
+    flex: 1;
+    @include baseFlexStyle;
+    justify-content: flex-start;
+  
+    @media (max-width: 480px) {
+      width: 100%;
+      flex: none;
+      justify-content: center;
+    }
+  
+    .header-logo {
+      height: 2.5em;
+    
+      @media (max-width: 620px) {
+        height: 1.8em; 
+      }
+    }
+  }  
+}
+
+
+
+
+
+
+
