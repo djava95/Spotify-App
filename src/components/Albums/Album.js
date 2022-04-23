@@ -15,4 +15,5 @@ const Album = ({ imageUrl, name, releaseYear }) => {
   )
 }
 
+
 export default Album;
