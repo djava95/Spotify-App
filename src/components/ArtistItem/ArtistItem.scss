@@ -5,8 +5,11 @@
   padding: 1em;
   gap: 1em;
   width: 30em;
-  color: white;
+  color: white; 
   background-color: rgb(40, 40, 40);
+  &:hover {
+    outline: white solid 2px;
+  }
 
   @media (max-width :480px) {
     padding: 1em;
@@ -19,9 +22,7 @@
   object-fit: cover;
   border-radius: 50%;
   transition: transform 700ms;  
-  &:hover {
-    transform: scale(1.1);
-  }
+  
 
   @media (max-width : 550px ){
       width: 12em;
