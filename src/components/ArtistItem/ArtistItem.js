@@ -9,20 +9,20 @@ import './ArtistItem.scss';
 const ArtistItem = ({artist}) => {
 
   const dispatch = useDispatch();
-  let [displayStatus, setDisplayStatus] = useState('');
+  let [open, setOpen] = useState('');
    
   const handleArtistClick = () => {
     dispatch(LoadArtistAlbums(artist.id));
-    setDisplayStatus('open');
+    setOpen('open');
   };
 
   const handleArtistClose = () => {
-    setDisplayStatus('');
+    setOpen('');
   }
 
   return (
     <div>
-      <section onClick={handleArtistClick} key={artist.id} className="artist-info">
+      <section onClick={handleArtistClick} key={artist.id} className="artist-item-container">
           <div className='artist-image-container' 
             style={{ backgroundImage: `url(${artist.images.length ? artist.images[1].url : noImage})`}}> 
           </div>
@@ -31,13 +31,14 @@ const ArtistItem = ({artist}) => {
               <div className="artist-popularity" title={ `${(artist.popularity/20).toFixed(1)} out of 5 stars` }>
                  Rating: {artist.popularity ? <StarRating rate={artist.popularity} /> : ''}
               </div>
-              <div className="artist-followers-num"> Followers: {artist.followers ? artist.followers.total.toLocaleString('en-US') : ''}</div>
+              <div className="artist-followers-num">
+                 Followers: {artist.followers ? artist.followers.total.toLocaleString('en-US') : ''}
+              </div>
           </div>            
       </section>
-      <Modal displayStatus={displayStatus} handleClick={handleArtistClose} />
+      <Modal open={open} handleClick={handleArtistClose} />
     </div>
   )
-
 }
 
 export default ArtistItem;
