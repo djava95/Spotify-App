@@ -18,7 +18,10 @@ const UserMenu = ({handleClick}) => {
         <div className='profile'>Profile</div>
       </div>
       {open ? <div className='menu-container'>
-                <div className='log-out' onClick={handleClick}> Log out </div>
+                <div className='user-name'> {'Arakelyan Gevorg'} </div>
+                  <div className='user-menu-actions'>
+                    <div className='log-out' onClick={handleClick}> Log out </div>
+                  </div>
               </div> : ''}
     </div>
   )
