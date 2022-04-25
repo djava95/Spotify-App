@@ -1,38 +1,48 @@
 @import '../../styles/mixins.scss';
 
-.header-main-container {
-  @include baseFlexStyle;
-  justify-content: flex-start;
-  padding: 1em;
-  color: white;
+
+.header-main-container  {
   background-color: black;
+  @include baseFlexStyle;
+  justify-content: center;
 
-  @media (max-width: 480px) {
-    flex-wrap: wrap;
-    gap: 1em;
-  }
-
-  .header-logo-cont {
-    flex: 1;
+  .header-content-wrapper {
     @include baseFlexStyle;
     justify-content: flex-start;
-  
-    @media (max-width: 480px) {
-      width: 100%;
-      flex: none;
-      justify-content: center;
-    }
-  
-    .header-logo {
-      height: 2.5em;
+    padding: 1em;
+    color: white;
+    width: 100%;
     
-      @media (max-width: 620px) {
-        height: 1.8em; 
-      }
+    @media (min-width: 1400px) {
+      width: 1350px;
     }
-  }  
-}
+    
+    @media (max-width: 480px) {
+      flex-wrap: wrap;
+      gap: 1em;
+    }
 
+    .header-logo-cont {
+      flex: 1;
+      @include baseFlexStyle;
+      justify-content: flex-start;
+    
+      @media (max-width: 480px) {
+        width: 100%;
+        flex: none;
+        justify-content: center;
+      }
+    
+      .header-logo {
+        height: 2.5em;
+      
+        @media (max-width: 620px) {
+          height: 1.8em; 
+        }
+      }
+    }  
+  }
+}
 
 
 

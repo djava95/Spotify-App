@@ -18,7 +18,7 @@ const ArtistsInfo = () => {
     <div className="artist-info-main-cont">
       {artists.map(artist => <ArtistItem key={artist.id} artist={artist}/>)}                
     </div>
-    )  
+  )  
 }
 
 export default ArtistsInfo;

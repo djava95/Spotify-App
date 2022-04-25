@@ -21,11 +21,13 @@ export default function Header() {
 
   return (
     <header className = 'header-main-container'>
-      <div className = 'header-logo-cont'>
-        <img className = 'header-logo' src={logo} alt='logo' />
+      <div className='header-content-wrapper'>
+        <div className = 'header-logo-cont'>
+          <img className = 'header-logo' src={logo} alt='logo' />
+        </div>
+        {token ? <SearchField /> : '' }
+        {token ? <UserMenu handleClick={handleLogOut}/> : '' }
       </div>
-      {token ? <SearchField /> : '' }
-      {token ? <UserMenu handleClick={handleLogOut}/> : '' }
     </header>
   )
 }
