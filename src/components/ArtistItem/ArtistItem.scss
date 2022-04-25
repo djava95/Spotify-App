@@ -4,15 +4,26 @@
   cursor: pointer;
   padding: 1em;
   gap: 1em;
-  width: 30em;
+  width: 28em;
   color: white; 
   background-color: rgb(40, 40, 40);
   &:hover {
     outline: white solid 2px;
   }
 
+  @media (max-width :560px) {
+    width: 24em;
+  }
+
+
   @media (max-width :480px) {
-    padding: 1em;
+    width: 20em;
+  }
+
+  @media (max-width :400px) {
+    width: 16em;
+    gap: 0.5em;
+    padding: 0.5em;
   }
 
   .artist-image {
@@ -20,16 +31,15 @@
     height: 15em;
     object-fit: cover;
     border-radius: 50%;
-    transition: transform 700ms;  
     
-    @media (max-width : 550px ){
-        width: 12em;
-        height: 12em;
+    @media (max-width : 560px ){
+      width: 10em;
+      height: 10em;
     }
-  
-    @media (max-width : 500px ){
-        width: 10em;
-        height: 10em;
+
+    @media (max-width : 480px ){
+        width: 7em;
+        height: 7em;
     }
   }
   
@@ -38,18 +48,28 @@
     flex-direction: column;
     gap: 0.5em;
   
-    @media (max-width :480px) {
-      padding: 1em;
-    }
-  
     .artist-name {
       font-size: 24px;
+    
+      @media (max-width :480px) {
+        font-size: 16px;
+      }
     }
     
     .artist-popularity {
       display: flex;
       gap: 0.5em;
+
+      @media (max-width :480px) {
+        font-size: 12px;
+      }
     
+    }
+    
+    .artist-followers-num {
+      @media (max-width :480px) {
+        font-size: 12px;
+      }
     }
   }
 }

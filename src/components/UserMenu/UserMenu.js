@@ -15,7 +15,7 @@ const UserMenu = ({handleClick}) => {
         <div className='user-image-container'>
           <img src={avatarIcon} className='user-image' alt='user' />
         </div>
-        <div className='user-name'>User Name</div>
+        <div className='profile'>Profile</div>
       </div>
       {open ? <div className='menu-container'>
                 <div className='log-out' onClick={handleClick}> Log out </div>

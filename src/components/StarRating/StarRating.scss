@@ -5,11 +5,16 @@
  gap: 0.25em;
 
   .star-icon {
-    height: 1em;
+    height: 16px;
     
     &.white {
       filter: invert(1);
     }
+  
+    @media (max-width: 480px){
+      height: 12px;
+    }  
+  
   }
 
 }

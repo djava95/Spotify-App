@@ -6,10 +6,6 @@
   @include baseFlexStyle;
   justify-content: center;
   
-  @media (max-width : 372px) {
-    order: 1;
-  }
-
   .search-field {
     width: 18em;
     height: 2em;
@@ -29,8 +25,13 @@
     }
 
     @media (max-width : 620px)  {
+      width: 15em;
+    }
+    
+    @media (max-width : 360px)  {
       width: 13em;
     }
+
   }
 }
 
