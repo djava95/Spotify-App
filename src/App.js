@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from './components/Header/Header.js';
 import LoginPage from './components/LoginPage/LoginPage.js';
 import SearchPage from './components/SearchPage/SearchPage.js';
+import Footer from './components/Footer/Footer.js';
 import './App.scss';
 
 axios.interceptors.response.use( 
@@ -27,6 +28,7 @@ export default function App() {
           <Route path='/' element={ <LoginPage /> } />
           <Route path='/search-page' element={ <SearchPage /> } /> 
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
