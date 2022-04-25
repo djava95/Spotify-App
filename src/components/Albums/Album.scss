@@ -3,18 +3,40 @@
   align-items: center;
   color: white;
     
-  .album-image {
-    width: 5em;
+  .album-image-container {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    
+    @media (max-width: 620px) {
+      width: 65px;
+      height: 65px;    
+    }
+    
+    @media (max-width: 480px) {
+      width: 50px;
+      height: 50px;    
+    }
   }
 
   .album-info {
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     padding-left: 0.5em;
     row-gap: 0.25em;
-  }
 
+    @media(max-width: 620px) {
+      max-width: 380px;
+    }    
+
+    @media(max-width: 480px) {
+      max-width: 180px;
+      font-size: 12px;
+    }
+  }
 }
 
 

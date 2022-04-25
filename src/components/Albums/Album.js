@@ -4,8 +4,8 @@ import './Album.scss';
 const Album = ({ imageUrl, name, releaseYear }) => {
   return (
    <div className='album-container'>
-     <div className='album-image-container'>
-       <img className='album-image'  src={imageUrl} alt={name} />
+     <div className='album-image-container'
+        style={{ backgroundImage: `url(${imageUrl})`}}>
      </div>
      <div className='album-info'>
        <div>{name}</div>

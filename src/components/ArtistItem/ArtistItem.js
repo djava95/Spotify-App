@@ -3,6 +3,7 @@ import { useDispatch} from "react-redux";
 import  Modal  from '../Modal/Modal';
 import { LoadArtistAlbums } from '../../services/actions/actions';
 import StarRating from '../StarRating/StarRating';
+import noImage from '../../assets/no-image.png';
 import './ArtistItem.scss';
 
 const ArtistItem = ({artist}) => {
@@ -22,8 +23,8 @@ const ArtistItem = ({artist}) => {
   return (
     <div>
       <section onClick={handleArtistClick} key={artist.id} className="artist-info">
-          <div className='artist-image-container'> 
-            <img src={artist.images.length ? artist.images[1].url : ''} className='artist-image' alt="artist" /> 
+          <div className='artist-image-container' 
+            style={{ backgroundImage: `url(${artist.images.length ? artist.images[1].url : noImage})`}}> 
           </div>
           <div className="info-list">
             <div className="artist-name">{artist.name ? artist.name : ''}</div>
