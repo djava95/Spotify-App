@@ -15,11 +15,9 @@ export default function SearchField() {
   useEffect (()=> {
     if (value === ''){
       dispatch(ClearSearchResults());
-    }
-
-    else { 
-      const sendRequest = setTimeout(() => dispatch(SearchByName(value)), 700);
-      return () => {
+    } else { 
+        const sendRequest = setTimeout(() => dispatch(SearchByName(value)), 700);
+        return () => {
         clearTimeout(sendRequest);
       } 
     } 

@@ -17,16 +17,11 @@ export default function LoginPage() {
   useEffect(() => {
     if (token) {
       localStorage.setItem('token', token);
+      navigate('/search-page');
     }
-  }, []);
+  },);
 
   window.location.hash = '';
-
-  useEffect(()=>{
-    if (localStorage.getItem('token')) {
-      navigate('/search-page')
-    }
-  },[]);
 
   return (
     <div className='login-page-main-container'>

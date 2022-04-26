@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import Header from './components/Header/Header.js';
@@ -13,20 +13,27 @@ axios.interceptors.response.use(
   }, 
   error => {
     if (error.response.status === 401) {
-      localStorage.setItem('token', '');
-      window.location = 'http://localhost:3000';
+      localStorage.removeItem('token');
+      window.location = '/'; 
     } 
   }
 )
 
 export default function App() {
+  let [token, setToken] = useState('');
+
+  useEffect(()=>{
+    setToken(localStorage.getItem('token'));
+    console.log(token);
+  },);
+
   return (
     <div className="app-main-container">
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={ <LoginPage /> } />
-          <Route path='/search-page' element={ <SearchPage /> } /> 
+          <Route path='/' element={ token ? <SearchPage /> : <LoginPage />  } />
+          <Route path='/search-page' element={ token ? <SearchPage /> : <LoginPage /> } /> 
         </Routes>
         <Footer />
       </BrowserRouter>

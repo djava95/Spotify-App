@@ -11,6 +11,7 @@ export default function Header() {
   
   const handleLogOut = () => {
     localStorage.setItem('token', '');
+    console.log(localStorage.getItem('token'));
     navigate('/');
   };
 
