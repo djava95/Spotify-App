@@ -15,43 +15,41 @@
     @include baseFlexStyle;
     justify-content: flex-start;
     gap: 0.5em;
-    padding: 0.25em 1em 0.25em 0.25em; 
-    background-color: rgb(75, 75, 75);
-    border: 1px solid white;
+    padding: 4px 16px 4px 4px; 
     border-radius: 18px;
     font-weight: 500;
     cursor: pointer;
+    &:hover {
+      background-color: rgb(75, 75, 75);
+      color: rgb(16, 187, 64);
+    }
 
     @media (max-width: 560px) {
       padding: 0;
-      background-color: black;
     }
     
     .profile {
+      &.active {
+        color: rgb(16, 187, 64);
+      }
       @media (max-width: 560px) {
         display: none;
       }
     }
 
     .user-image-container {
-      @include baseFlexStyle;
-      justify-content: center;
-      padding: 0.4em;
+      width: 42px;
+      height: 42px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
       border-radius: 50%;
-      background-color: black;
-
-      .user-image {
-        width: 1em;
-        height: 1em;
-        border: none;
-        filter: invert(1);
-      }  
     }  
   }
 
   .menu-container{
     position : absolute;
-    top: 2.75em;
+    top: 60px;
     @include baseFlexStyle;
     flex-direction: column;
     

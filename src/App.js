@@ -24,7 +24,6 @@ export default function App() {
 
   useEffect(()=>{
     setToken(localStorage.getItem('token'));
-    console.log(token);
   },);
 
   return (

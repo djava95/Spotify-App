@@ -7,11 +7,9 @@ import './LoginPage.scss';
 
 export default function LoginPage() {
   const navigate = useNavigate();
-
   const handleLogin = () => {
     loginSpotify();
-  }
-  
+  };
   let token = useCurrentToken();
 
   useEffect(() => {
