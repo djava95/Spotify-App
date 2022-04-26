@@ -1,4 +1,4 @@
-import { React, useState, useEffect} from 'react';
+import { React, useEffect} from 'react';
 import { useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import { GetUserData } from '../../services/actions/actions';
@@ -10,19 +10,18 @@ import './Header.scss';
 export default function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  let [token, setToken] = useState('');
+  const token = localStorage.getItem('token');
   
   const handleLogOut = () => {
-    localStorage.setItem('token', '');
+    localStorage.setItem('token', '');  
     navigate('/');
   };
 
   useEffect(()=>{
-    setToken(localStorage.getItem('token'));
-    if (localStorage.getItem('token')) {
+    if (token) {
       dispatch(GetUserData());
     }
-  },);
+  },[token]);
 
   return (
     <header className = 'header-main-container'>

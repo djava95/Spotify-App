@@ -21,7 +21,6 @@
     cursor: pointer;
     &:hover {
       background-color: rgb(75, 75, 75);
-      color: rgb(16, 187, 64);
     }
 
     @media (max-width: 560px) {
@@ -29,10 +28,7 @@
     }
     
     .profile {
-      &.active {
-        color: rgb(16, 187, 64);
-      }
-      @media (max-width: 560px) {
+      @media (max-width: 680px) {
         display: none;
       }
     }
@@ -45,6 +41,22 @@
       background-size: cover;
       border-radius: 50%;
     }  
+  
+    .arrow-contanier {
+      @include baseFlexStyle;
+      
+      @media (max-width: 380px) {
+        display: none;
+      }
+      .expand-arrow {
+        height: 16px;
+        width: 16px;
+      
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+    }
   }
 
   .menu-container{

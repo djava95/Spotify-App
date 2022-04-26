@@ -1,9 +1,9 @@
 .login-page-main-container {
   display: flex;
-  min-height: 50vh;
   flex: 1;
   flex-direction: column;  
-  justify-content: center; 
+  justify-content: center;
+  padding: 64px; 
     
   .button-container {
     display: flex;

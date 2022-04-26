@@ -17,7 +17,7 @@ export default function LoginPage() {
       localStorage.setItem('token', token);
       navigate('/search-page');
     }
-  },);
+  }, []);
 
   window.location.hash = '';
 
