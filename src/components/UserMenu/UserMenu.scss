@@ -61,6 +61,7 @@
 
   .menu-container{
     position : absolute;
+    z-index: 1;
     top: 60px;
     @include baseFlexStyle;
     flex-direction: column;
