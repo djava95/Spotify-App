@@ -2,12 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 16px;
   padding: 16px 8px;
 }
 
 .no-matches-message {
-  margin-top: 3em;
+  margin: 64px auto;
   text-align: center;
   color: white;
 }
