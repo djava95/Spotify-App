@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import axios from 'axios';
 import Header from './components/Header/Header.js';
 import LoginPage from './components/LoginPage/LoginPage.js';
@@ -25,8 +25,9 @@ export default function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={  <LoginPage />  } />
-          <Route path='/search-page' element={  <SearchPage /> } />  
+          <Route path='/' element={ <LoginPage /> } />
+          <Route path='/search-page' element={ <SearchPage /> } />  
+          <Route path='*' element ={ <Navigate to= '/'/> } />
         </Routes>
         <Footer />
       </BrowserRouter>
