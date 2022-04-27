@@ -5,8 +5,8 @@ import expandArrow from '../../assets/expand-arrow.svg';
 import './UserMenu.scss';
 
 const UserMenu = ({handleClick}) => {
-  let [open, setOpen] = useState(false);
-  let userData = useSelector(state => state.user);
+  const [open, setOpen] = useState(false);
+  const userData = useSelector(state => state.user);
   const handleToggle = () => {
     setOpen(!open);
   }

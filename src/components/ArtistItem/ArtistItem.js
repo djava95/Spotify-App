@@ -9,7 +9,7 @@ import './ArtistItem.scss';
 const ArtistItem = ({artist}) => {
 
   const dispatch = useDispatch();
-  let [open, setOpen] = useState('');
+  const [open, setOpen] = useState('');
    
   const handleArtistClick = () => {
     dispatch(LoadArtistAlbums(artist.id));

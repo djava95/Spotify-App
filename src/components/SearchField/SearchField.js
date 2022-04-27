@@ -6,7 +6,7 @@ import './SearchField.scss';
 
 export default function SearchField() {
   const dispatch = useDispatch();
-  let [value, setValue] = useState('');
+  const [value, setValue] = useState('');
 
   const handleChange = (e) => {
     setValue(e.target.value);

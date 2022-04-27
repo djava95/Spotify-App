@@ -17,7 +17,8 @@ export function AlbumsLoader () {
                 item => <Album key={item.id} imageUrl={item.images[1].url} 
                 name={item.name} releaseYear={item.release_date.substring(0, 4)} />
               )
-              : <div className='no-album'> No albums available </div>  }
+              : <div className='no-album'> No albums found. </div> 
+          }
         </div>
     </section>
   )

@@ -10,14 +10,17 @@ export default function LoginPage() {
   const handleLogin = () => {
     loginSpotify();
   };
-  let token = useCurrentToken();
 
+  const token = useCurrentToken();
+  
   useEffect(() => {
     if (token) {
       localStorage.setItem('token', token);
-      navigate('/search-page');
     }
-  }, []);
+    if (localStorage.getItem('token')) {
+      navigate('/search-page')
+    }
+  },[]);
 
   window.location.hash = '';
 
