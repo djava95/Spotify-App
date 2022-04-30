@@ -2,19 +2,5 @@
  display: flex;
  flex-direction: row;
  align-items: center;
- gap: 0.25em;
-
-  .star-icon {
-    height: 16px;
-    
-    &.white {
-      filter: invert(1);
-    }
-  
-    @media (max-width: 480px){
-      height: 12px;
-    }  
-  
-  }
-
+ gap: 4px;
 }

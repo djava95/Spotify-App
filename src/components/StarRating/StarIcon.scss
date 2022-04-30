@@ -1,0 +1,23 @@
+.star-icon-container {
+  display: flex;
+  align-items: center;
+
+  .star-icon {
+    height: 16px;
+    width: 16px;
+    stroke: black;
+    fill-rule:'nonzero';
+    fill: black;
+    fill-opacity: '1';
+    
+    &.filled {
+      fill : white;
+      stroke : white;
+    }
+
+    @media (max-width: 480px){
+      height: 12px;
+      width: 12px;
+    }  
+  }
+}
