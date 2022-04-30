@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_USER_DATA, ARTIST_SEARCH, LOAD_ARTIST_ALBUMS,  CLEAR_SEARCH_RESULTS, } from './action-types';
+import {GET_USER_DATA, ARTIST_SEARCH, LOAD_ARTIST_ALBUMS,  CLEAR_SEARCH_RESULTS, CLEAR_ALBUMS_DATA } from './action-types';
 
 export const GetUserData = () => async (dispatch) => {
   const res = await axios.get(`https://api.spotify.com/v1/me`, {
@@ -43,5 +43,11 @@ export const LoadArtistAlbums = (artistId) => async (dispatch) => {
 export const ClearSearchResults =  ()  => {
   return {
     type: CLEAR_SEARCH_RESULTS,
+  }
+};
+
+export const ClearAlbumsData =  ()  => {
+  return {
+    type: CLEAR_ALBUMS_DATA,
   }
 };

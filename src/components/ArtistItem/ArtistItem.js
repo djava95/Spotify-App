@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { useDispatch} from "react-redux";
 import  Modal  from '../Modal/Modal';
-import { LoadArtistAlbums } from '../../services/actions/actions';
+import { LoadArtistAlbums, ClearAlbumsData } from '../../services/actions/actions';
 import StarRating from '../StarRating/StarRating';
 import noImage from '../../assets/no-image.png';
 import './ArtistItem.scss';
@@ -18,6 +18,7 @@ const ArtistItem = ({artist}) => {
 
   const handleArtistClose = () => {
     setOpen('');
+    dispatch(ClearAlbumsData());
   }
 
   return (

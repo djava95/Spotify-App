@@ -1,9 +1,9 @@
-import {GET_USER_DATA, ARTIST_SEARCH, LOAD_ARTIST_ALBUMS, CLEAR_SEARCH_RESULTS} from "../actions/action-types";
+import {GET_USER_DATA, ARTIST_SEARCH, LOAD_ARTIST_ALBUMS, CLEAR_SEARCH_RESULTS, CLEAR_ALBUMS_DATA} from "../actions/action-types";
 
 const defaultState = {
   user : null,
   artists: null, 
-  albums: [],
+  albums: null,
 }
 
 export default function Reducer(state = defaultState, action) {
@@ -28,6 +28,11 @@ export default function Reducer(state = defaultState, action) {
         ...state,
         artists : null,
       }
+    case CLEAR_ALBUMS_DATA : 
+      return {
+        ...state,
+        albums : null,
+      }  
     default:
     return state;
   } 
