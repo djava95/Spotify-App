@@ -1,4 +1,4 @@
-import { React, useEffect} from 'react';
+import { Fragment, React, useEffect} from 'react';
 import { useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import { GetUserData } from '../../services/actions/actions';
@@ -29,8 +29,12 @@ export default function Header() {
         <div className='header-logo-cont'>
           <img className='header-logo' src={logo} alt='logo' />
         </div>
-        {token ? <SearchField /> : '' }
-        {token ? <UserMenu handleLogOut={handleLogOut}/> : '' }
+        {token ? (
+        <Fragment>
+          <SearchField />
+          <UserMenu handleLogOut={handleLogOut}/>
+        </Fragment>
+        ) : '' }
       </div>
     </header>
   )
