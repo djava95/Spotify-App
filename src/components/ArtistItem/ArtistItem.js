@@ -7,10 +7,11 @@ import noImage from '../../assets/no-image.png';
 import './ArtistItem.scss';
 
 const ArtistItem = ({artist}) => {
-
   const dispatch = useDispatch();
   const [open, setOpen] = useState('');
-   
+
+  const getArtistRating = () => (artist.popularity/20).toFixed(1);
+  
   const handleArtistClick = () => {
     dispatch(LoadArtistAlbums(artist.id));
     setOpen('open');
@@ -29,7 +30,7 @@ const ArtistItem = ({artist}) => {
           </div>
           <div className="info-list">
             <div className="artist-name">{artist.name ? artist.name : ''}</div>
-              <div className="artist-popularity" title={ `${(artist.popularity/20).toFixed(1)} out of 5 stars` }>
+              <div className="artist-popularity" title={ `${getArtistRating()} out of 5 stars` }>
                  Rating: {artist.popularity ? <StarRating rate={artist.popularity} /> : ''}
               </div>
               <div className="artist-followers-num">
