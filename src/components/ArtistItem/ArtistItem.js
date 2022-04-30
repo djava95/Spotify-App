@@ -8,20 +8,20 @@ import './ArtistItem.scss';
 
 const ArtistItem = ({artist}) => {
   const dispatch = useDispatch();
-  const [open, setOpen] = useState('');
+  const [open, setOpen] = useState(false);
 
   const getArtistRating = () => (artist.popularity/20).toFixed(1);
   
   const handleArtistClick = () => {
     dispatch(LoadArtistAlbums(artist.id));
-    setOpen('open');
+    setOpen(true);
   };
 
   const handleArtistClose = () => {
-    setOpen('');
+    setOpen(false);
     dispatch(ClearAlbumsData());
   }
-
+  
   return (
     <Fragment>
       <section onClick={handleArtistClick} key={artist.id} className="artist-item-container">

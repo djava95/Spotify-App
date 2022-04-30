@@ -14,7 +14,7 @@ const Modal = ({open, handleClick }) =>{
   
   if (open) {
     return (
-      <div className={`modal-container ${open}`} onClick={handleClick}>
+      <div className={`modal-container`} onClick={handleClick}>
         <div className='modal-content'>
           <AlbumsLoader />
         </div>
