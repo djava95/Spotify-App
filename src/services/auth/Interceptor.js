@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const Interceptor = ()=> axios.interceptors.response.use( 
+const Interceptor = () => axios.interceptors.response.use( 
   response => {
     return response
   }, 
