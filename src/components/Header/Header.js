@@ -13,7 +13,7 @@ export default function Header() {
   const token = localStorage.getItem('token');
   
   const handleLogOut = () => {
-    localStorage.setItem('token', '');  
+    localStorage.removeItem('token');  
     navigate('/');
   };
 
@@ -24,13 +24,13 @@ export default function Header() {
   },[token]);
 
   return (
-    <header className = 'header-main-container'>
+    <header className='header-main-container'>
       <div className='header-content-wrapper'>
-        <div className = 'header-logo-cont'>
-          <img className = 'header-logo' src={logo} alt='logo' />
+        <div className='header-logo-cont'>
+          <img className='header-logo' src={logo} alt='logo' />
         </div>
         {token ? <SearchField /> : '' }
-        {token ? <UserMenu handleClick={handleLogOut}/> : '' }
+        {token ? <UserMenu handleLogOut={handleLogOut}/> : '' }
       </div>
     </header>
   )
