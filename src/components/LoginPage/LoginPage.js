@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
-import useCurrentToken from '../../services/hooks/useCurrentToken';
+import useTokenfromHash from '../../services/hooks/useTokenFromHash';
 import loginSpotify from '../../services/auth/loginSpotify';
 import Button from '../Button/Button';
 import './LoginPage.scss';
@@ -11,7 +11,7 @@ export default function LoginPage() {
     loginSpotify();
   };
 
-  const token = useCurrentToken();
+  const token = useTokenfromHash();
   
   useEffect(() => {
     if (token) {
