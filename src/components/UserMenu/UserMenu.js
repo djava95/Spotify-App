@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import { useSelector } from 'react-redux';
-import avatarIcon from '../../assets/user-avatar.svg';
+import avatarIcon from '../../assets/user-avatar-32px.svg';
 import expandArrow from '../../assets/expand-arrow.svg';
 import './UserMenu.scss';
 
@@ -15,7 +15,7 @@ const UserMenu = ({handleClick}) => {
     <div className='user-menu-container'>
       <div className='user-info-container' onClick={handleToggle}>
         <div className='user-image-container'
-         style={{ backgroundImage: `url(${userData !== null ? (userData.images.length ? userData.images[0].url: avatarIcon) : avatarIcon})`}}> 
+          style={{ backgroundImage: `url(${avatarIcon})`}}>   
         </div>
         <div className={open ? 'profile active': 'profile'}> Profile </div>
         <div className='arrow-contanier'>
