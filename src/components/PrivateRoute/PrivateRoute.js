@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import {useNavigate} from 'react-router-dom';
 
-const ProtectedRoute = ({children}) => {
+const PrivateRoute = ({children}) => {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
   
@@ -16,6 +16,4 @@ const ProtectedRoute = ({children}) => {
   )
 }
 
-
-
-export default ProtectedRoute;
+export default PrivateRoute;

@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.js';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
 import Header from './components/Header/Header.js';
 import LoginPage from './components/LoginPage/LoginPage.js';
 import SearchPage from './components/SearchPage/SearchPage.js';
@@ -14,7 +14,7 @@ export default function App() {
         <Header />
         <Routes>
           <Route path='/' element={ <LoginPage /> } />
-          <Route path='/search-page' element={<ProtectedRoute> <SearchPage/> </ProtectedRoute>} />
+          <Route path='/search-page' element={<PrivateRoute> <SearchPage /> </PrivateRoute> }/>  
           <Route path='*' element ={ <Navigate to= '/'/> } />
         </Routes>
         <Footer />
