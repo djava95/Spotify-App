@@ -15,7 +15,7 @@ const UserMenu = ({handleClick}) => {
     <div className='user-menu-container'>
       <div className='user-info-container' onClick={handleToggle}>
         <div className='user-image-container'
-          style={{ backgroundImage: `url(${avatarIcon})`}}>   
+          style={{ backgroundImage: `url(${userData?.images?.[0]?.url || avatarIcon})`}}>   
         </div>
         <div className={open ? 'profile active': 'profile'}> Profile </div>
         <div className='arrow-contanier'>
