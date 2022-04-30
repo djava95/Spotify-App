@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState,Fragment } from 'react';
 import { useDispatch} from "react-redux";
 import  Modal  from '../Modal/Modal';
 import { LoadArtistAlbums, ClearAlbumsData } from '../../services/actions/actions';
@@ -22,7 +22,7 @@ const ArtistItem = ({artist}) => {
   }
 
   return (
-    <div>
+    <Fragment>
       <section onClick={handleArtistClick} key={artist.id} className="artist-item-container">
           <div className='artist-image-container' 
             style={{ backgroundImage: `url(${artist.images.length ? artist.images[1].url : noImage})`}}> 
@@ -38,7 +38,7 @@ const ArtistItem = ({artist}) => {
           </div>            
       </section>
       <Modal open={open} handleClick={handleArtistClose} />
-    </div>
+    </Fragment>
   )
 }
 
