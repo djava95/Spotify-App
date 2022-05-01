@@ -5,7 +5,7 @@ import './StarIcon.scss';
 const StarIcon = ({filled}) => {
   return (
     <span className='star-icon-container'>
-      <Icon className= {filled ? 'star-icon filled' : 'star-icon' } />
+      <Icon className= {`star-icon ${filled ? 'filled' : ''}`} />
     </span>
   )
 };
