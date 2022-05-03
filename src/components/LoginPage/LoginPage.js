@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
-import useTokenfromHash from '../../services/hooks/useTokenFromHash';
+import useToken from '../../services/hooks/useToken';
 import loginSpotify from '../../services/auth/loginSpotify';
 import Button from '../Button/Button';
 import './LoginPage.scss';
@@ -11,18 +11,13 @@ export default function LoginPage() {
     loginSpotify();
   };
 
-  const token = useTokenfromHash();
+  const token = useToken();
   
   useEffect(() => {
     if (token) {
-      localStorage.setItem('token', token);
+      navigate('/search-page'); 
     }
-    if (localStorage.getItem('token')) {
-      navigate('/search-page')
-    }
-  },[]);
-
-  window.location.hash = '';
+  },[token]);
 
   return (
     <div className='login-page-main-container'>
