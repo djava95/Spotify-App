@@ -1,6 +1,12 @@
 .loader-icon {
   fill: #2ebd59;
   animation: resize 3s infinite;
+  height: 100px;
+  width: 100px;
+  @media (max-width: 480px) {
+    height: 60px;
+    width: 60px;
+  }
 }
 
 @keyframes resize {
