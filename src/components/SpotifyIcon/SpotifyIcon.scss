@@ -1,0 +1,10 @@
+.loader-icon {
+  fill: #2ebd59;
+  animation: resize 3s infinite;
+}
+
+@keyframes resize {
+  0% {transform: scale(1);}
+  50% {transform: scale(0.4);}
+  100% {transform: scale(1);}
+}
